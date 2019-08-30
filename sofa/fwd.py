@@ -78,10 +78,14 @@ def fwd(ys, angles, animation=False):
 
 if __name__ == "__main__":
     import matplotlib.pyplot as plt
-    x0 = np.sqrt(2)
+    y1 = [0.0000000000e+00,7.0724721599e-01,6.2462453106e-01,7.0708385372e-01,0.0000000000e+00]
+    angle1 = [4.5000000000e+01,4.5000000000e+01,-8.8401506880e-01,-4.5000000000e+01,-4.5000000000e+01]
+    x1 = np.linspace(0, 1, len(y1))
+
     n = 100
-    x = np.linspace(-x0, x0, n)
-    ys = -x**2 + np.sqrt((1.5)**2+(0.5)**2-2) + np.sqrt(2)*.5
-    angles = np.linspace(45, -45, n)
+    x = np.linspace(0, 1, n)
+    ys = np.interp(x, x1, y1)
+    angles = np.interp(x, x1, angle1)
     sof = fwd(ys, angles, True)
     print(sof.area)
+    input()
