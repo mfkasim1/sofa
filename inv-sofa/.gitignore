@@ -1,0 +1,9 @@
+error.err
+*.output
+*.output/*
+*.output/*/*
+*.maleo-log
+*.alg.db-history
+*.ml
+*.history.txt
+*.results.txt
